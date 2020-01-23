@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Inicio de Sesion del Sistema</title>
+        <h:outputStylesheet library="css" name="index.css"/>
+    </h:head>
+    <h:body id="principal">
+
+       <b:navBar brand="Sistema de Datos de Manufactura y Mineria" brandHref="#"  fluid="true">
+         <f:facet name="kebab">
+            <span class="fa fa-chevron-right"></span>
+        </f:facet>
+            <b:navbarLinks>
+             <b:navLink value="Home"  outcome="index" ></b:navLink>
+             <b:navLink value="Crear una Cuenta"  outcome="usuario" ></b:navLink>
+             <b:navLink value="Iniciar Sesion" outcome="login" ></b:navLink>
+             </b:navbarLinks>
+        </b:navBar>
+        
+        <br/>
+        
+        <center>
+        
+        <h:form>
+            <p:messages autoUpdate="true" showDetail="true"/>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario" value="Correo Electronico"/>
+                <p:inputText id="txtUsuario" value="#{indexController.persona.correo}" required="true"/>
+                
+                <p:outputLabel for="txtClave" value="Contraseña"/>
+                <p:password id="txtClave" value="#{indexController.persona.contrasenia}" required="true"/>
+                
+                <h:column/>
+                <p:commandButton icon="ui-icon-key" value="Iniciar Sesion" action="#{indexController.inciarSesion()}" />
+            </h:panelGrid>
+            
+           <br/>
+           <br/>
+            <p:link value="Crear Cuenta" outcome="usuario"/>
+            
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+        
+        
+        
+          <b:navBar brand="Universidad Politécnica Salesiana" brandHref="#" inverse="true">
+        
+        </b:navBar>
+            
+        </h:form> 
+            
+        </center>
+    </h:body>
+</html>
+

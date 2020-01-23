@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Usuarios</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="index.css"/>
+    </h:head>
+    <h:body id="principal">
+        
+        <b:navBar brand="Sistema de Datos de Manufactura y Mineria" brandHref="#"  fluid="true" >
+         <f:facet name="kebab">
+            <span class="fa fa-chevron-right"></span>
+        </f:facet>
+            <b:navbarLinks>
+             <b:navLink value="Home" outcome="index" ></b:navLink>
+             <b:navLink value="Crear una Cuenta"  outcome="usuario" ></b:navLink>
+             <b:navLink value="Iniciar Sesion" outcome="login" ></b:navLink>
+             </b:navbarLinks>
+        </b:navBar>
+        
+        <br/>
+  
+        
+        <center>
+        <h:form>
+            
+            <p:messages id="mensaje" autoUpdate="true" severity="info,fatal" showSummary="true" showDetail="true"/>
+            <p:fieldset legend="Registro de un Nuevo Usuario"> 
+                <p:panelGrid  columns="2" >
+                     
+                    <p:outputLabel value="Identificacion CI"/>
+                    <p:inputText value="#{personasController.personas.codigo}" required="true"/>
+                    
+                     <p:outputLabel value="Nombre y Apellido"/>
+                     <p:inputText value="#{personasController.personas.nombres}" required="true"/>
+         
+                     <p:outputLabel value="Fecha de Nacimiento"/>
+                     <p:calendar value="#{personasController.personas.fecha_nacimiento}" />
+           
+                     <p:outputLabel value="Telefono"/>
+                     <p:inputText value="#{personasController.personas.telefono}" required="true"/>
+           
+                    <p:outputLabel value="Direccion"/>
+                    <p:inputText value="#{personasController.personas.direccion}" required="true"/>
+                    
+                    <p:outputLabel value="Correo Electronico"/>
+                    <p:inputText value="#{personasController.personas.correo}" required="true"/>
+           
+                    <p:outputLabel value="Contraseña"/>
+                    <p:password id="clave1" value="#{personasController.personas.contrasenia}" 
+                                validatorMessage="LAS CLAVES NO COINCIDEN" 
+                                match="clave2" feedback="true" promptLabel="Ingrese una Clave" required="true"/>
+          
+                    <p:outputLabel value="Repetir Contraseña"/>
+                    <p:password id="clave2" required="true"/>
+                 </p:panelGrid>
+                <br/>
+                <br/>
+                <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{personasController.Registrar_P()}"/>
+            </p:fieldset>
+        </h:form>
+            
+        </center>
+        
+        <br/>
+        
+         
+        
+         <b:navBar brand="Universidad Politécnica Salesiana" brandHref="#" inverse="true">
+        
+        </b:navBar>
+        
+        
+        
+    </h:body>
+    
+</html>

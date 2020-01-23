@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../WEB-INF/templates/plantilla.xhtml">
+
+            <ui:define name="content">
+                
+                <br/>
+                 <center> <p:outputLabel  value="Datos de Manufactura y Mineria"/> </center>
+                
+                
+                <br/>
+                
+                 <p:outputLabel  value="Datos de Productos"/> 
+                <br/>
+                <br/>
+                
+                <p:dataTable style="width:auto;" scrollable="true" scrollHeight="200" value="#{verDatos.producto}" var="pro">
+                    
+                    <p:column width="auto" headerText="Id Empresa">
+                        <h:outputText value="#{pro.id_diie}"/>
+                    </p:column>
+                    
+                    <p:column width="auto" headerText="Clasificacion Industrial 3Digitos">
+                          <h:outputText value="#{pro.ciiu3}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Descripción Internacional Industrial Uniforme-3Digitos">
+                        <h:outputText value="#{pro.des_ciiu3}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Codigo Producto">
+                        <h:outputText value="#{pro.cpc}"/>
+                    </p:column>
+                    <p:column headerText="Descripcion del Codigo de Producto">
+                        <h:outputText value="#{pro.des_cpc}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Unidad del Producto">
+                        <h:outputText value="#{pro.unidad}"/>
+                    </p:column>
+                    <p:column headerText="Descripcion de la Unidad">
+                        <h:outputText value="#{pro.des_unidad}"/>
+                    </p:column>
+                    <p:column headerText="Cantidad de Ventas Nacionales">
+                        <h:outputText value="#{pro.cantidad_ventas_n}"/>
+                    </p:column>
+                    <p:column headerText="Valor de Ventas Nacionales">
+                        <h:outputText value="#{pro.valor_ventas_n}"/>
+                    </p:column>
+                    <p:column headerText="Cantidad de Ventas Extrangeras">
+                        <h:outputText value="#{pro.cantidad_ventas_e}"/>
+                    </p:column>
+                      
+                    <p:column headerText="Valor de Ventas Extrangeras">
+                        <h:outputText value="#{pro.valor_ventas_e}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Cantidad Productiva de Terceros">
+                        <h:outputText value="#{pro.cant_terceros}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Grupo en Encuesta">
+                        <h:outputText value="#{pro.wgrumanu}"/>
+                    </p:column>
+                </p:dataTable>
+                
+                <br/>
+                  <br/>
+                  
+                  
+                  <br/>
+                 <p:outputLabel  value="Datos de Materia Prima"/> 
+                  <br/>
+                    <br/>
+                 <p:dataTable style="width:auto;" scrollable="true" scrollHeight="200" value="#{verDatosO.materia}" var="materia">
+                    
+                    <p:column width="auto" headerText="Id Empresa">
+                        <h:outputText value="#{materia.id_diie}"/>
+                    </p:column>
+                    
+                    <p:column width="auto" headerText="Clasificacion Industrial 3Digitos">
+                          <h:outputText value="#{materia.ciiu3}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Descripción Internacional Industrial Uniforme-3Digitos">
+                        <h:outputText value="#{materia.des_ciiu3}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Codigo Producto">
+                        <h:outputText value="#{materia.cpc}"/>
+                    </p:column>
+                    <p:column headerText="Descripcion del Codigo de Producto">
+                        <h:outputText value="#{materia.des_cpc}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Unidad del Producto">
+                        <h:outputText value="#{materia.unidad}"/>
+                    </p:column>
+                    <p:column headerText="Descripcion de la Unidad">
+                        <h:outputText value="#{materia.des_unidad}"/>
+                    </p:column>
+                    <p:column headerText="Cantidad de Ventas Nacionales">
+                        <h:outputText value="#{materia.cantidad_n}"/>
+                    </p:column>
+                    <p:column headerText="Valor de Ventas Nacionales">
+                        <h:outputText value="#{materia.valor_n}"/>
+                    </p:column>
+                    <p:column headerText="Cantidad de Ventas Extrangeras">
+                        <h:outputText value="#{materia.cantidad_e}"/>
+                    </p:column>
+                      
+                    <p:column headerText="Valor de Ventas Extrangeras">
+                        <h:outputText value="#{materia.valor_e}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Cantidad Producida de Terceros">
+                        <h:outputText value="#{materia.cuenta3}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Grupo en Encuesta">
+                        <h:outputText value="#{materia.wgrumanu}"/>
+                    </p:column>
+                </p:dataTable>
+                 
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

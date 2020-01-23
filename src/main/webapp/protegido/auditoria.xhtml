@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../WEB-INF/templates/plantilla.xhtml">
+
+            <ui:define name="content">
+               
+                
+                  <br/>
+                 <center> <p:outputLabel  value="AUDITORIA DEL SISTEMA"/> </center>
+                 
+                <br/>
+                 
+                 <br/>
+                 <br/>
+                 <p:dataTable style="width:auto;" scrollable="true" id="tabla1" scrollHeight="200" value="#{auditoriaController.auditoria}" var="aud">
+                    
+                  
+                    <p:column headerText="#">
+                        <h:outputText value="#{aud.id_aud}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Nombre Tabla">
+                        <h:outputText value="#{aud.tabla_aud}"/>
+                    </p:column>
+                    
+                      <p:column headerText="Operacion">
+                          <h:outputText value="#{aud.operacion_aud}"/>
+                    </p:column>
+                     
+                        <p:column headerText="Antiguo Valor">
+                            <h:outputText value="#{aud.valoranterior_aud}"/>
+                    </p:column>
+                     
+                       <p:column headerText="Nuevo Valor">
+                           <h:outputText value="#{aud.valornuevo_aud}"/>
+                    </p:column>
+                     
+                     
+                     <p:column headerText="Fecha de Actualizacion">
+                         <h:outputText value="#{aud.fecha_aud}">
+                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        </h:outputText>
+                        </p:column>
+                        <p:column headerText="Usuario">
+                            <h:outputText value="#{aud.usuario_aud}"/>
+                    </p:column>
+                     
+                         
+                           <p:column headerText="Esquema">
+                               <h:outputText value="#{aud.esquema_aud}"/>
+                    </p:column>
+                         
+                         
+                            <p:column headerText="Activacion">
+                                <h:outputText value="#{aud.activar_aud}"/>
+                    </p:column>
+                         
+                    
+                          <p:column headerText="Trigger">
+                              <h:outputText value="#{aud.trigger_aud}"/>
+                    </p:column>
+                     
+                     
+                     
+                </p:dataTable>
+                 
+                 <br/>
+                 <br/>
+                 
+               
+                
+                
+                
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

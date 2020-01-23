@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../WEB-INF/templates/plantilla.xhtml">
+
+            <ui:define name="content">
+              
+                <br/>
+                 <center> <p:outputLabel  value="REPORTE : CANTIDAD DE INDUSTRIAS POR PRODUCTOS"/> </center>
+                 
+                <br/>
+                 <b:button value="REGRESAR " outcome="reporteempresaclie" /> 
+                 <br/>
+                 <br/>
+                 <p:dataTable style="width:auto;" scrollable="true" scrollHeight="200" value="#{industrias_ProductosController.indPro}" var="ind">
+                    
+                  <p:column headerText="Id Empresa">
+                      <h:outputText value="#{ind.id_diie}"/>
+                    </p:column>
+                     
+                  
+                     
+                    <p:column width="auto" headerText="Clasificacion Industrial 3Digitos">
+                          <h:outputText value="#{ind.ciiu3}"/>
+                    </p:column>
+                     
+                     
+                     <p:column headerText="Descripción Internacional Industrial Uniforme-3Digitos">
+                        <h:outputText value="#{ind.des_ciiu3}"/>
+                    </p:column>
+                     
+                     
+                      <p:column headerText="Codigo Producto">
+                        <h:outputText value="#{ind.cpc}"/>
+                    </p:column>
+                     
+                      <p:column headerText="Descripcion del Codigo de Producto">
+                        <h:outputText value="#{ind.des_cpc}"/>
+                    </p:column>
+                     
+                     
+                     <p:column headerText="Valor Total">
+                         <h:outputText value="#{ind.valor_total}"/>
+                    </p:column>
+                    
+                    
+                </p:dataTable>
+                 
+                 <br/>
+                 <br/>
+                
+                
+                
+                 <img src="./../resources/images/r3.PNG" alt="i1" height="150px"/>
+                
+                 
+               <button onClick="window.print()" >Imprimir</button>
+                 
+               <center> <p:outputLabel  value="GRAFICA"/> </center>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
